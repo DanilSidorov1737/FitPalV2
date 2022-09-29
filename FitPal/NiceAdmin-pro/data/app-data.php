@@ -1,4 +1,5 @@
 <?php
+session_start();
 //setting header to json
  header('Content-Type: application/json');
  
@@ -25,8 +26,10 @@
   $result3 = $mysqli->query("SELECT `friends_id` FROM `friends` ORDER BY `friends_id` DESC LIMIT 1");
   $result4 = $mysqli->query("SELECT `weight`, `date` FROM `weight` WHERE 1");
   $result5 = $mysqli->query("SELECT `Comments`, `Review`, `Time`, `Muscle`, `Date` FROM `Logs` WHERE 1");
-  $result6 = $mysqli->query("SELECT `Username`, `Gender`, `EmailAddress`, `Birthday` FROM `Users_1` WHERE `User_ID` = 2");
-  $result7 = $mysqli->query("SELECT * FROM `About` WHERE 1");
+  $result6 = $mysqli->query("SELECT `Username`, `Gender`, `EmailAddress`, `Birthday` FROM `Users_1` WHERE `Username` = '{$_SESSION["user"]}' ");
+  
+  $result8 = $mysqli->query(" SELECT * FROM About WHERE User_ID_About_FK = (SELECT User_ID FROM Users_1 WHERE Username = '{$_SESSION["user"]}' ) ");
+  
 
 
   
@@ -67,9 +70,12 @@
   foreach ($result6 as $row) {
     $data[] = $row;
     }
-    foreach ($result7 as $row) {
-        $data[] = $row;
-        }
+  foreach ($result7 as $row) {
+    $data[] = $row;
+    }
+  foreach ($result8 as $row) {
+    $data[] = $row;
+  }
     
 
 
