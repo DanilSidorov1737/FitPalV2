@@ -1,68 +1,48 @@
-/**
-* Template Name: NiceAdmin - v2.4.0
-* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 $(document).ready(function(){
     $.ajax({
-      url: "data/app-data.php",
+      url: "data/search-data.php",
       method: "GET",
       dataType: 'json',
       success: function (data1) {
         data1 = JSON.parse(JSON.stringify(data1))
+  
+     
         
-        console.log(data1)
+        const item7 = data1
+  
+           var table =  $('#Search_Friends').DataTable({
+              data: item7,
+              columnDefs: [{ "targets": -1, "data": null, "defaultContent": "<input id='btnDetails' class='btn btn-success' width='25px' value='Get Details' />"}],
+              columns: [
+              
+              { data: 'User_ID' },
+              { data: 'Username' },
+              { data: 'Birthday' },
+              { data: 'Gender' },
+              { targets: -1, data: null, defaultContent: "<Button id='btnDetails' class='btn btn-success' width='25px' value='Get Details'>Send Friend Request</Button" }
+             
+              
+              
+              ]
 
-        document.getElementById('job').innerHTML = data1[6]['Job'];
-        document.getElementById('about').innerHTML = data1[6]['About'];
-        document.getElementById('username').innerHTML = data1[5]['Username'];
-        document.getElementById('name').innerHTML = data1[5]['Username'];
-        document.getElementById('gender').innerHTML = data1[5]['Gender'];
-        document.getElementById('birthday').innerHTML = data1[5]['Birthday'];
-        document.getElementById('email').innerHTML = data1[5]['EmailAddress'];
+              
+            });
 
-        Twitter = data1[6]['Twitter']
-        Facebook = data1[6]['Facebook']
-        Instagram = data1[6]['Instagram']
-        Linked = data1[6]['Linked']
-
-
-        const profile1 = data1[6]["ProfilePic"]
-        
-        document.getElementById("Profile_Profile_Pic").src = profile1
-        document.getElementById("Profile_Profile_Pic1").src = profile1
-
-       
-        
-        
+            $('#Search_Friends tbody').on('click', 'button', function () {
+                var data = table.row($(this).parents('tr')).data();
+                var data12 = JSON.stringify(data)
+                alert(data12);
+            });
+  
+         
+  
       }
     })
   });
-  
-  
-  
-  function visitTwitter(){
-    window.open(Twitter,'_blank')
-    
-}
-function visitFacebook(){
-    window.open(Facebook,'_blank')
-    
-}
-function visitInstagram(){
-    window.open(Instagram,'_blank')
-    
-}
-function VisitLinked(){
-    window.open(Linked,'_blank')
-    
-}
-  
-  
-  
-  (function() {
+
+
+
+(function() {
     "use strict";
   
     /**

@@ -53,6 +53,12 @@ $(document).ready(function(){
               
               ]
             });
+
+      const profile = data1[6]["ProfilePic"]
+      document.getElementById("DashBoardProfile").src = profile
+
+      const indexjob1 = data1[6]["Job"]
+      document.getElementById("IndexJob1").innerHTML = indexjob1
             
             
        

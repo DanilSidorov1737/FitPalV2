@@ -64,7 +64,7 @@ require "data/session.php";
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
+      <form class="search-form d-flex align-items-center"  action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
@@ -223,22 +223,14 @@ require "data/session.php";
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle" id='DashBoardProfile'>
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $_SESSION["user"]; ?></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>
-          <?php 
-
-      echo $_SESSION["user"];
-
-     
-           ?>
-
-              </h6>
-              <span>Web sdf</span>
+              <h6> <?php echo $_SESSION["user"]; ?> </h6>
+              <span id="IndexJob1">Web sdf</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -487,7 +479,14 @@ require "data/session.php";
           <i class="bi bi-person"></i>
           <span>Feed</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li><!-- End Feed Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="forms-layouts.html">
+          <i class="bi bi-person"></i>
+          <span>Update your Page</span>
+        </a>
+      </li><!-- End Updates Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
@@ -734,7 +733,7 @@ require "data/session.php";
                 <div class="card-body">
                   <h5 class="card-title">Recent Sales <span>| Today</span></h5>
 
-                  <table class="table table-borderless datatable">
+                  <table class="table table-borderless" id="Something">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
