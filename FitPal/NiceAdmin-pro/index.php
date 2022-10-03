@@ -98,8 +98,8 @@ require "data/session.php";
             <li class="notification-item">
               <i class="bi bi-exclamation-circle text-warning"></i>
               <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
+                <h4>Friend Request</h4>
+                <p id='num1'></p>
                 <p>30 min. ago</p>
               </div>
             </li>
@@ -109,11 +109,12 @@ require "data/session.php";
             </li>
 
             <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
+              <i class="bi bi-exclamation-circle text-warning"></i>
               <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
+                <h4>Friend Request</h4>
+                <p id='num2'></p>
+                <form name='accept' action='data/accept.php'> <button>Accept</button> </form>
+                <p>30 min. ago</p>
               </div>
             </li>
 

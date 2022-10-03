@@ -12,14 +12,14 @@ $(document).ready(function(){
   
            var table =  $('#Search_Friends').DataTable({
               data: item7,
-              columnDefs: [{ "targets": -1, "data": null, "defaultContent": "<input id='btnDetails' class='btn btn-success' width='25px' value='Get Details' />"}],
+              
               columns: [
               
               { data: 'User_ID' },
               { data: 'Username' },
               { data: 'Birthday' },
               { data: 'Gender' },
-              { targets: -1, data: null, defaultContent: "<Button id='btnDetails' class='btn btn-success' width='25px' value='Get Details'>Send Friend Request</Button" }
+              { targets: -1, data: null, defaultContent: " <form action='data/friend-request.php' method='post' name='friendreq'> <input type='text' class='form-control' name='friendname' placeholder='Enter Name for Confirmation'></input> <Button  name='Submit' type='Submit' class='btn btn-success' width='25px' >Send Friend Request</Button> </form> " }
              
               
               
@@ -28,11 +28,7 @@ $(document).ready(function(){
               
             });
 
-            $('#Search_Friends tbody').on('click', 'button', function () {
-                var data = table.row($(this).parents('tr')).data();
-                var data12 = JSON.stringify(data)
-                alert(data12);
-            });
+         
   
          
   
@@ -40,6 +36,7 @@ $(document).ready(function(){
     })
   });
 
+ 
 
 
 (function() {

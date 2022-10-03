@@ -28,7 +28,7 @@ $(document).ready(function(){
       document.getElementById("wktnum").innerHTML = wkt;
 
 
-      friends = Number(data1[2]['friends_id'])
+      friends = Number(data1[7]['Friends'])
       document.getElementById('friendsnum').innerHTML = friends;
 
       dataArr2 = [];
@@ -61,6 +61,27 @@ $(document).ready(function(){
       document.getElementById("IndexJob1").innerHTML = indexjob1
             
             
+       
+
+    }
+  })
+});
+
+
+$(document).ready(function(){
+  $.ajax({
+    url: "data/notification.php",
+    method: "GET",
+    dataType: 'json',
+    success: function (data2) {
+      data1 = JSON.parse(JSON.stringify(data2))
+
+      console.log(data2)
+
+      document.getElementById('num1').innerHTML = 'You Have a Friend Request from ' + data2[0]["Username"]
+      document.getElementById('num2').innerHTML = 'You Have a Friend Request from ' + data2[1]["Username"]
+
+  
        
 
     }

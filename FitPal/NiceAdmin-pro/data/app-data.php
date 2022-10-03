@@ -18,7 +18,7 @@ session_start();
 }
 
 
-
+$owner = $_SESSION['user'];
 
 //execute query
   $result = $mysqli->query("SELECT * FROM `PR` WHERE 1");
@@ -28,7 +28,7 @@ session_start();
   $result5 = $mysqli->query("SELECT `Comments`, `Review`, `Time`, `Muscle`, `Date` FROM `Logs` WHERE 1");
   $result6 = $mysqli->query("SELECT `Username`, `Gender`, `EmailAddress`, `Birthday` FROM `Users_1` WHERE `Username` = '{$_SESSION["user"]}' ");
   $result8 = $mysqli->query(" SELECT * FROM About WHERE User_ID_About_FK = (SELECT User_ID FROM Users_1 WHERE Username = '{$_SESSION["user"]}' ) ");
-  
+  $result9 = $mysqli->query("SELECT COUNT(Username) AS 'Friends' FROM Users_1 WHERE User_ID IN (SELECT Sender_User_ID FROM RealFriends WHERE Receive_User_ID = (SELECT User_ID FROM Users_1 WHERE Username = '$owner' AND Accept = '1')) ");
 
 
   
@@ -73,6 +73,9 @@ session_start();
     $data[] = $row;
     }
   foreach ($result8 as $row) {
+    $data[] = $row;
+  }
+  foreach ($result9 as $row) {
     $data[] = $row;
   }
     
