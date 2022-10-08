@@ -8,3 +8,6 @@
 
 
 1 hr on Fri, Oct, 7 @ 10:18 PM
+
+
+2.5 hrs on Sat, Oct, 8 @ 5:40 PM
