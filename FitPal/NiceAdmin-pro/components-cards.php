@@ -523,137 +523,147 @@
         <div class="row align-items-top">
           <div class="col-lg-6">
   
-            <!-- Card with header and footer -->
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">A Text Blurb Someone Posted</h5>
-                Ut in ea error laudantium quas omnis officia. Sit sed praesentium voluptas. Corrupti inventore consequatur nisi necessitatibus modi consequuntur soluta id. Enim autem est esse natus assumenda. Non sunt dignissimos officiis expedita. Consequatur sint repellendus voluptas.
-                Quidem sit est nulla ullam. Suscipit debitis ullam iusto dolorem animi dolorem numquam. Enim fuga ipsum dolor nulla quia ut.
-                Rerum dolor voluptatem et deleniti libero totam numquam nobis distinctio. Sit sint aut. Consequatur rerum in.
-              </div>
-              <div class="card-footer">
-                By: Whoever Posted it 
-              </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with header and footer -->
-            <div class="card">
-              
-              <div class="card-body">
-                <h5 class="card-title">Quick Little Status Update</h5>
-                Ut in ea error laudantium quas omnis officia. Sit sed praesentium voluptas. Corrupti inventore consequatur nisi necessitatibus modi consequuntur soluta id. Enim autem est esse natus assumenda. Non sunt dignissimos officiis expedita. Consequatur sint repellendus voluptas.
-                Quidem sit est nulla ullam. Suscipit debitis ullam iusto dolorem animi dolorem numquam. Enim fuga ipsum dolor nulla quia ut.
-                Rerum dolor voluptatem et deleniti libero totam numquam nobis distinctio. Sit sint aut. Consequatur rerum in.
-              </div>
-              <div class="card-footer">
-                By: Whoever Posted
-              </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with an image on left -->
-            <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">A post with a picture</h5>
-                    <p class="card-text">Caption!</p>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with an image on left -->
 
-             <!-- Card with an image on left -->
-             <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Post with a video</h5>
-                    <p class="card-text">Caption</p>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with an image on left -->
+            
 
-             <!-- Card with an image on left -->
-             <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card with an image on left</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with an image on left -->
+<?php 
+session_start();
+//setting header to json
+ header('Content-Type: application/json');
+ 
 
-             <!-- Card with an image on left -->
-             <div class="card mb-3">
+//database
+ define('DB_HOST', 'localhost');
+ define('DB_USERNAME', 'root');
+ define('DB_PASSWORD', 'root');
+ define('DB_NAME', 'FitPal');
+
+//get connection
+ $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+ if(!$mysqli){
+  die("Connection failed: " . $mysqli->error);
+}
+
+
+$owner = $_SESSION['user'];
+
+//execute query
+  $result = $mysqli->query("SELECT * FROM `Posts` WHERE 1");
+ 
+
+
+
+ 
+    foreach($result as $row){
+      
+      
+      ?> 
+        <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
+                  <?php echo " <img src='Profiles/".$row['Post_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
+                  
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">Card with an image on left</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title"><?php echo $row['Post_Title']; ?></h5>
+                    <p class="card-text"><?php echo $row['Post_Text']; ?></p>
+                    
+                    <p class="card-text"><?php echo $row['Poster']; ?></p>
+
+                    
+                    
                   </div>
                 </div>
               </div>
-            </div><!-- End Card with an image on left -->
+            </div>
+
+      <?php
+    
+  }
+  ?>
   
+
+
+
           </div>
   
+
+
+
   
           <div class="col-lg-3">
-  
-             <!-- Card with an image on bottom -->
-             <div class="card">
+
+
+<?php 
+session_start();
+//setting header to json
+ header('Content-Type: application/json');
+ 
+
+//database
+ define('DB_HOST', 'localhost');
+ define('DB_USERNAME', 'root');
+ define('DB_PASSWORD', 'root');
+ define('DB_NAME', 'FitPal');
+
+//get connection
+ $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+ if(!$mysqli){
+  die("Connection failed: " . $mysqli->error);
+}
+
+
+$owner = $_SESSION['user'];
+
+//execute query
+  $result = $mysqli->query("SELECT * FROM `Adds` WHERE 1");
+ 
+
+
+
+ 
+    foreach($result as $row){
+      
+      
+      ?> 
+         <!-- Card with an image on bottom -->
+         <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Ads of things mostly to do with either Supplements</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title"><?php echo $row['Ad_Title']; ?></h5>
+              <p class="card-text"><?php echo $row['Ad_Text']; ?></p>
+              <p class="card-text"><?php echo $row['Producer']; ?></p>
               </div>
-              <img src="assets/img/card.jpg" class="card-img-bottom" alt="...">
+              <?php echo " <img src='Profiles/".$row['Ad_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
             </div><!-- End Card with an image on bottom -->
 
-             <!-- Card with an image on bottom -->
-             <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Different Workouts</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <img src="assets/img/card.jpg" class="card-img-bottom" alt="...">
-            </div><!-- End Card with an image on bottom -->
+      <?php
+    
+  }
+  ?>
+             
+              
+              
+          
+            
 
-             <!-- Card with an image on bottom -->
-             <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Workout Science </h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <img src="assets/img/card.jpg" class="card-img-bottom" alt="...">
-            </div><!-- End Card with an image on bottom -->
-  
+            
           </div>
+          
 
           <div class="col-lg-3">
             <!-- Card with an image on bottom -->
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Search FitPal</h5>
+                <h5 class="card-title">Create a Post</h5>
                 <p class="card-text">Choose a Topic</p>
                 <input placeholder="Search here">
               </div>
-              <img src="assets/img/card.jpg" class="card-img-bottom" alt="...">
-              <p>Results ^^^</p>
+              <p>Or choose tag [Pics, Updates, etc]</p>
+              
+             
             </div><!-- End Card with an image on bottom -->
 
 
