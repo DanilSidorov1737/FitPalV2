@@ -476,7 +476,7 @@ require "data/session.php";
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="components-cards.html">
+        <a class="nav-link collapsed" href="components-cards.php">
           <i class="bi bi-person"></i>
           <span>Feed</span>
         </a>

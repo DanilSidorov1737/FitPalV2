@@ -29,6 +29,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.4.0
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -562,7 +564,7 @@ $owner = $_SESSION['user'];
         <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <?php echo " <img src='Profiles/".$row['Post_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
+                  <?php echo " <img src='data/uploads/".$row['Post_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
                   
                 </div>
                 <div class="col-md-8">
@@ -636,7 +638,7 @@ $owner = $_SESSION['user'];
               <p class="card-text"><?php echo $row['Ad_Text']; ?></p>
               <p class="card-text"><?php echo $row['Producer']; ?></p>
               </div>
-              <?php echo " <img src='Profiles/".$row['Ad_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
+              <?php echo " <img src='data/uploads/".$row['Ad_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
             </div><!-- End Card with an image on bottom -->
 
       <?php
@@ -647,7 +649,7 @@ $owner = $_SESSION['user'];
               
               
           
-            
+          
 
             
           </div>
@@ -658,10 +660,28 @@ $owner = $_SESSION['user'];
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Create a Post</h5>
-                <p class="card-text">Choose a Topic</p>
-                <input placeholder="Search here">
+                <form action="data/upload-post.php" method="post" enctype="multipart/form-data">
+                <input placeholder="Title" name='uploadtitle' required>
+                <input placeholder="Text" name='uploadtext'required>
+                <br>
+                <br>
+                
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Post" class="btn btn-primary" name="submit">
+                
+                </form>
+                
+                
+
+
+</form>
+                
+                
               </div>
-              <p>Or choose tag [Pics, Updates, etc]</p>
+
+  
+
+              
               
              
             </div><!-- End Card with an image on bottom -->
@@ -697,7 +717,7 @@ $owner = $_SESSION['user'];
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/feed.js"></script>
 
 </body>
 
