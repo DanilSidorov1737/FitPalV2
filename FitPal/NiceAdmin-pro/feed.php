@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Components / Breadcrumbs - NiceAdmin Bootstrap Template</title>
+  <title>Components / Cards - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -28,6 +28,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.4.0
@@ -280,175 +282,7 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link " data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html" class="active">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
+      
 
       <li class="nav-heading">Pages</li>
 
@@ -458,6 +292,20 @@
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="feed.php">
+          <i class="bi bi-person"></i>
+          <span>Feed</span>
+        </a>
+      </li><!-- End Feed Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="update-page.html">
+          <i class="bi bi-person"></i>
+          <span>Update your Page</span>
+        </a>
+      </li><!-- End Updates Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
@@ -481,7 +329,7 @@
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="pages-login.php">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
@@ -508,148 +356,189 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Breadcrumbs</h1>
+      <h1>Cards</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Home</a></li>
           <li class="breadcrumb-item">Components</li>
-          <li class="breadcrumb-item active">Breadcrumbs</li>
+          <li class="breadcrumb-item active">Cards</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <section class="section">
-      <div class="row">
-        <div class="col-lg-6">
+      <section class="section">
+        <div class="row align-items-top">
+          <div class="col-lg-6">
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Default Breadcrumbs</h5>
 
-              <nav>
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Default</li>
-                </ol>
-              </nav>
-            </div>
+
+
+            <?php
+            session_start();
+            //setting header to json
+            header('Content-Type: application/json');
+
+
+            //database
+            define('DB_HOST', 'localhost');
+            define('DB_USERNAME', 'root');
+            define('DB_PASSWORD', 'root');
+            define('DB_NAME', 'FitPal');
+
+            //get connection
+            $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+            if (!$mysqli) {
+              die("Connection failed: " . $mysqli->error);
+            }
+
+
+            $owner = $_SESSION['user'];
+
+            //execute query
+            $result = $mysqli->query("SELECT * FROM `Posts` WHERE 1");
+
+
+
+
+
+            foreach ($result as $row) {
+
+
+            ?>
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <?php echo " <img src='data/uploads/" . $row['Post_Pic'] . "' class='img-fluid rounded-start' alt='...'> " ?>
+
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo $row['Post_Title']; ?></h5>
+                      <p class="card-text"><?php echo $row['Post_Text']; ?></p>
+
+                      <p class="card-text"><?php echo $row['Poster']; ?></p>
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <?php
+
+            }
+            ?>
+
+
+
+
           </div>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Centered</h5>
 
-              <nav class="d-flex justify-content-center">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Centered Position</li>
-                </ol>
-              </nav>
-            </div>
+
+
+
+          <div class="col-lg-3">
+
+
+            <?php
+            session_start();
+            //setting header to json
+            header('Content-Type: application/json');
+
+
+            //database
+            define('DB_HOST', 'localhost');
+            define('DB_USERNAME', 'root');
+            define('DB_PASSWORD', 'root');
+            define('DB_NAME', 'FitPal');
+
+            //get connection
+            $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+            if (!$mysqli) {
+              die("Connection failed: " . $mysqli->error);
+            }
+
+
+            $owner = $_SESSION['user'];
+
+            //execute query
+            $result = $mysqli->query("SELECT * FROM `Adds` WHERE 1");
+
+
+
+
+
+            foreach ($result as $row) {
+
+
+            ?>
+              <!-- Card with an image on bottom -->
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $row['Ad_Title']; ?></h5>
+                  <p class="card-text"><?php echo $row['Ad_Text']; ?></p>
+                  <p class="card-text"><?php echo $row['Producer']; ?></p>
+                </div>
+                <?php echo " <img src='data/uploads/" . $row['Ad_Pic'] . "' class='img-fluid rounded-start' alt='...'> " ?>
+              </div><!-- End Card with an image on bottom -->
+
+            <?php
+
+            }
+            ?>
+
+
+
+
+
+
+
           </div>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Right Positioned</h5>
 
-              <nav class="d-flex justify-content-end">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Right Position</li>
-                </ol>
-              </nav>
-            </div>
-          </div>
+          <div class="col-lg-3">
+            <!-- Card with an image on bottom -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Create a Post</h5>
+                <form action="data/upload-post.php" method="post" enctype="multipart/form-data">
+                  <input placeholder="Title" name='uploadtitle' required>
+                  <input placeholder="Text" name='uploadtext' required>
+                  <br>
+                  <br>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">With Home Icon</h5>
+                  <input type="file" name="fileToUpload" id="fileToUpload">
+                  <input type="submit" value="Post" class="btn btn-primary" name="submit">
 
-              <nav>
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php"><i class="bi bi-house-door"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Default</li>
-                </ol>
-              </nav>
-            </div>
+                </form>
+
+
+
+
+                </form>
+
+
+              </div>
+
+
+
+
+
+
+            </div><!-- End Card with an image on bottom -->
+
+
           </div>
 
         </div>
 
-        <div class="col-lg-6">
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Breadcrumbs with a page title</h5>
-
-              <div class="pagetitle">
-                <h1>Page Title</h1>
-                <nav>
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item">Components</li>
-                    <li class="breadcrumb-item active">Breadcrumbs</li>
-                  </ol>
-                </nav>
-              </div><!-- End Breadcrumbs with a page title -->
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Breadcrumbs with different dividers</h5>
-
-              <nav style="--bs-breadcrumb-divider: '>';">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Data</li>
-                </ol>
-              </nav>
-
-              <nav style="--bs-breadcrumb-divider: '|';">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Data</li>
-                </ol>
-              </nav>
-
-              <nav style="--bs-breadcrumb-divider: '-';">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Data</li>
-                </ol>
-              </nav>
-
-              <nav style="--bs-breadcrumb-divider: '•';">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Data</li>
-                </ol>
-              </nav>
-
-              <nav style="--bs-breadcrumb-divider: '';">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Library</a></li>
-                  <li class="breadcrumb-item active">Data</li>
-                </ol>
-              </nav>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+      </section>
 
   </main><!-- End #main -->
 
@@ -658,7 +547,7 @@
     <div class="copyright">
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
-    
+
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -674,7 +563,7 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/feed.js"></script>
 
 </body>
 

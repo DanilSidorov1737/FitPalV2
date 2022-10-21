@@ -371,7 +371,7 @@
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="update-page.html">
               <i class="bi bi-circle"></i><span>Form Layouts</span>
             </a>
           </li>
@@ -483,7 +483,7 @@
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="pages-login.php">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
@@ -524,136 +524,136 @@
       <section class="section">
         <div class="row align-items-top">
           <div class="col-lg-6">
-  
-
-            
-
-<?php 
-session_start();
-//setting header to json
- header('Content-Type: application/json');
- 
-
-//database
- define('DB_HOST', 'localhost');
- define('DB_USERNAME', 'root');
- define('DB_PASSWORD', 'root');
- define('DB_NAME', 'FitPal');
-
-//get connection
- $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
- if(!$mysqli){
-  die("Connection failed: " . $mysqli->error);
-}
-
-
-$owner = $_SESSION['user'];
-
-//execute query
-  $result = $mysqli->query("SELECT * FROM `Posts` WHERE 1");
- 
 
 
 
- 
-    foreach($result as $row){
-      
-      
-      ?> 
-        <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <?php echo " <img src='data/uploads/".$row['Post_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
-                  
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['Post_Title']; ?></h5>
-                    <p class="card-text"><?php echo $row['Post_Text']; ?></p>
-                    
-                    <p class="card-text"><?php echo $row['Poster']; ?></p>
 
-                    
-                    
+            <?php
+            session_start();
+            //setting header to json
+            header('Content-Type: application/json');
+
+
+            //database
+            define('DB_HOST', 'localhost');
+            define('DB_USERNAME', 'root');
+            define('DB_PASSWORD', 'root');
+            define('DB_NAME', 'FitPal');
+
+            //get connection
+            $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+            if (!$mysqli) {
+              die("Connection failed: " . $mysqli->error);
+            }
+
+
+            $owner = $_SESSION['user'];
+
+            //execute query
+            $result = $mysqli->query("SELECT * FROM `Posts` WHERE 1");
+
+
+
+
+
+            foreach ($result as $row) {
+
+
+            ?>
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <?php echo " <img src='data/uploads/" . $row['Post_Pic'] . "' class='img-fluid rounded-start' alt='...'> " ?>
+
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo $row['Post_Title']; ?></h5>
+                      <p class="card-text"><?php echo $row['Post_Text']; ?></p>
+
+                      <p class="card-text"><?php echo $row['Poster']; ?></p>
+
+
+
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-      <?php
-    
-  }
-  ?>
-  
+            <?php
+
+            }
+            ?>
+
 
 
 
           </div>
-  
 
 
 
-  
+
+
           <div class="col-lg-3">
 
 
-<?php 
-session_start();
-//setting header to json
- header('Content-Type: application/json');
- 
-
-//database
- define('DB_HOST', 'localhost');
- define('DB_USERNAME', 'root');
- define('DB_PASSWORD', 'root');
- define('DB_NAME', 'FitPal');
-
-//get connection
- $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
- if(!$mysqli){
-  die("Connection failed: " . $mysqli->error);
-}
+            <?php
+            session_start();
+            //setting header to json
+            header('Content-Type: application/json');
 
 
-$owner = $_SESSION['user'];
+            //database
+            define('DB_HOST', 'localhost');
+            define('DB_USERNAME', 'root');
+            define('DB_PASSWORD', 'root');
+            define('DB_NAME', 'FitPal');
 
-//execute query
-  $result = $mysqli->query("SELECT * FROM `Adds` WHERE 1");
- 
+            //get connection
+            $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+            if (!$mysqli) {
+              die("Connection failed: " . $mysqli->error);
+            }
+
+
+            $owner = $_SESSION['user'];
+
+            //execute query
+            $result = $mysqli->query("SELECT * FROM `Adds` WHERE 1");
 
 
 
- 
-    foreach($result as $row){
-      
-      
-      ?> 
-         <!-- Card with an image on bottom -->
-         <div class="card">
-              <div class="card-body">
-              <h5 class="card-title"><?php echo $row['Ad_Title']; ?></h5>
-              <p class="card-text"><?php echo $row['Ad_Text']; ?></p>
-              <p class="card-text"><?php echo $row['Producer']; ?></p>
-              </div>
-              <?php echo " <img src='data/uploads/".$row['Ad_Pic']."' class='img-fluid rounded-start' alt='...'> "?>
-            </div><!-- End Card with an image on bottom -->
 
-      <?php
-    
-  }
-  ?>
-             
-              
-              
-          
-          
 
-            
+            foreach ($result as $row) {
+
+
+            ?>
+              <!-- Card with an image on bottom -->
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $row['Ad_Title']; ?></h5>
+                  <p class="card-text"><?php echo $row['Ad_Text']; ?></p>
+                  <p class="card-text"><?php echo $row['Producer']; ?></p>
+                </div>
+                <?php echo " <img src='data/uploads/" . $row['Ad_Pic'] . "' class='img-fluid rounded-start' alt='...'> " ?>
+              </div><!-- End Card with an image on bottom -->
+
+            <?php
+
+            }
+            ?>
+
+
+
+
+
+
+
           </div>
-          
+
 
           <div class="col-lg-3">
             <!-- Card with an image on bottom -->
@@ -661,34 +661,34 @@ $owner = $_SESSION['user'];
               <div class="card-body">
                 <h5 class="card-title">Create a Post</h5>
                 <form action="data/upload-post.php" method="post" enctype="multipart/form-data">
-                <input placeholder="Title" name='uploadtitle' required>
-                <input placeholder="Text" name='uploadtext'required>
-                <br>
-                <br>
-                
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <input type="submit" value="Post" class="btn btn-primary" name="submit">
-                
+                  <input placeholder="Title" name='uploadtitle' required>
+                  <input placeholder="Text" name='uploadtext' required>
+                  <br>
+                  <br>
+
+                  <input type="file" name="fileToUpload" id="fileToUpload">
+                  <input type="submit" value="Post" class="btn btn-primary" name="submit">
+
                 </form>
-                
-                
 
 
-</form>
-                
-                
+
+
+                </form>
+
+
               </div>
 
-  
 
-              
-              
-             
+
+
+
+
             </div><!-- End Card with an image on bottom -->
 
 
           </div>
-  
+
         </div>
 
 
@@ -701,7 +701,7 @@ $owner = $_SESSION['user'];
     <div class="copyright">
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
-    
+
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

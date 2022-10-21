@@ -68,25 +68,6 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function(){
-  $.ajax({
-    url: "data/notification.php",
-    method: "GET",
-    dataType: 'json',
-    success: function (data2) {
-      data1 = JSON.parse(JSON.stringify(data2))
-
-      console.log(data2)
-
-      document.getElementById('num1').innerHTML = 'You Have a Friend Request from ' + data2[0]["Username"]
-      document.getElementById('num2').innerHTML = 'You Have a Friend Request from ' + data2[1]["Username"]
-
-  
-       
-
-    }
-  })
-});
 
 
 
