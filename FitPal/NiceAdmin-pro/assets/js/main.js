@@ -24,8 +24,9 @@ $(document).ready(function(){
       document.getElementById("prs").innerHTML = prs + '/1000';
 
       
-      wkt = Number(data1[1]['workout_id'])
+      wkt = Number(data1[1]['WKNUM'])
       document.getElementById("wktnum").innerHTML = wkt;
+    
 
 
       friends = Number(data1[7]['Friends'])

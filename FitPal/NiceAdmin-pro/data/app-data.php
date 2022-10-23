@@ -21,11 +21,11 @@ session_start();
 $owner = $_SESSION['user'];
 
 //execute query
-  $result = $mysqli->query("SELECT * FROM `PR` WHERE 1");
-  $result2 = $mysqli->query("SELECT `workout_id` FROM `WorkoutNum` ORDER BY `workout_id` DESC LIMIT 1");
+  $result = $mysqli->query("SELECT * FROM `PR` WHERE User_ID_FK_PR = (SELECT User_ID FROM Users_1 WHERE Username = '$owner') ");
+  $result2 = $mysqli->query("SELECT COUNT(*) AS WKNUM FROM Logs WHERE User_ID_FK = (SELECT User_ID FROM Users_1 WHERE Username = '$owner')");
   $result3 = $mysqli->query("SELECT `friends_id` FROM `friends` ORDER BY `friends_id` DESC LIMIT 1");
-  $result4 = $mysqli->query("SELECT `weight`, `date` FROM `weight` WHERE 1");
-  $result5 = $mysqli->query("SELECT `Comments`, `Review`, `Time`, `Muscle`, `Date` FROM `Logs` WHERE 1");
+  $result4 = $mysqli->query("SELECT `weight`, `date` FROM `weight` WHERE User_ID_FK_Weight = (SELECT User_ID FROM Users_1 WHERE Username = '$owner') ");
+  $result5 = $mysqli->query("SELECT `Comments`, `Review`, `Time`, `Muscle`, `Date` FROM `Logs` WHERE User_ID_FK = (SELECT User_ID FROM Users_1 WHERE Username = '$owner')");
   $result6 = $mysqli->query("SELECT `Username`, `Gender`, `EmailAddress`, `Birthday` FROM `Users_1` WHERE `Username` = '{$_SESSION["user"]}' ");
   $result8 = $mysqli->query(" SELECT * FROM About WHERE User_ID_About_FK = (SELECT User_ID FROM Users_1 WHERE Username = '{$_SESSION["user"]}' ) ");
   $result9 = $mysqli->query("SELECT COUNT(Username) AS 'Friends' FROM Users_1 WHERE User_ID IN (SELECT Sender_User_ID FROM RealFriends WHERE Receive_User_ID = (SELECT User_ID FROM Users_1 WHERE Username = '$owner' AND Accept = '1')) ");
