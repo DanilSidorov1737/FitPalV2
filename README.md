@@ -11,3 +11,7 @@
 
 
 2.5 hrs on Sat, Oct, 8 @ 5:40 PM
+
+2 hrs on Thurs, Oct, 20
+
+2 hrs on Sat, Oct, 22 @ 8:37 PM
