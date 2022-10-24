@@ -371,7 +371,7 @@
             </a>
           </li>
           <li>
-            <a href="update-page.html">
+            <a href="update-page.php">
               <i class="bi bi-circle"></i><span>Form Layouts</span>
             </a>
           </li>

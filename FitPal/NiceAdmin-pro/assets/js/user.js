@@ -30,9 +30,11 @@ $(document).ready(function(){
 
 
         const profile1 = data1[6]["ProfilePic"]
+        console.log(profile1)
         
         document.getElementById("Profile_Profile_Pic").src = profile1
-        document.getElementById("Profile_Profile_Pic1").src = profile1
+        document.getElementById("Profile_Pic").src = profile1
+        document.getElementById("Profile_Profile_Pic17").src = profile1
 
        
         

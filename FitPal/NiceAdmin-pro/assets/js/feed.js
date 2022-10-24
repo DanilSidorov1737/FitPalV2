@@ -4,6 +4,47 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+$(document).ready(function(){
+  $.ajax({
+    url: "data/app-data.php",
+    method: "GET",
+    dataType: 'json',
+    success: function (data1) {
+      data1 = JSON.parse(JSON.stringify(data1))
+      
+      console.log(data1)
+
+      const profile1 = data1[6]["ProfilePic"]
+      
+      document.getElementById("Profile_Profile_Pic").src = profile1
+      document.getElementById("Profile_Profile_Pic1").src = profile1
+
+     
+      
+      
+    }
+  })
+});
+
+
+
+function visitTwitter(){
+  window.open(Twitter,'_blank')
+  
+}
+function visitFacebook(){
+  window.open(Facebook,'_blank')
+  
+}
+function visitInstagram(){
+  window.open(Instagram,'_blank')
+  
+}
+function VisitLinked(){
+  window.open(Linked,'_blank')
+  
+}
+
 
 
   

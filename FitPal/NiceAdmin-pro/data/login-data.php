@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
  if($rows == 1){
 session_start();
 $_SESSION["user"] = $user;
+$_SESSION["pass"] = $pass;
 
  header("Location: http://localhost:8888/FitPalV2/FitPal/NiceAdmin-pro/"); // Redirecting to other page
  }

@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php 
+
+session_start();
+require "data/session.php";
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -215,7 +220,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="" alt="Profile" class="rounded-circle" id="Profile_Profile_Pic1">
+            <img src="" alt="Profile" class="rounded-circle" id="Profile_Profile_Pic">
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $_SESSION["user"]; ?></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -304,7 +309,7 @@
       </li><!-- End Feed Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="update-page.html">
+        <a class="nav-link collapsed" href="update-page.php">
           <i class="bi bi-person"></i>
           <span>Update your Page</span>
         </a>
@@ -376,7 +381,14 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="" alt="Profile" class="rounded-circle" id="Profile_Profile_Pic">
+              <img src="" alt="Profile" class="rounded-circle" id="Profile_Profile_Pic17">
+              <div class="pt-2">
+                        <form action="data/update-profile.php" method="POST" enctype="multipart/form-data" >
+                          <input type="file" name="fileToUpload" id="fileToUpload">
+                          <button type="submit"  class="btn btn-primary" name="submit">Update</button>
+
+                        </form> 
+                        </div>
               <h2 id='name'></h2>
               <h3 id='job'></h3>
               <div class="social-links mt-2">
@@ -458,11 +470,8 @@
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="" alt="Profile" id="Profile_Profile_Pic">
-                        <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                        </div>
+                        <img src=""  id="Profile_Pic">
+                        
                       </div>
                     </div>
 
@@ -604,7 +613,7 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form action='data/pass-change.php' method='POST'>
 
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
@@ -620,12 +629,7 @@
                       </div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                      </div>
-                    </div>
+                    
 
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Change Password</button>

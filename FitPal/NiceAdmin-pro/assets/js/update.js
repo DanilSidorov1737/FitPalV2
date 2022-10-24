@@ -36,6 +36,29 @@ $(document).ready(function(){
     })
   });
 
+
+  $(document).ready(function(){
+    $.ajax({
+      url: "data/app-data.php",
+      method: "GET",
+      dataType: 'json',
+      success: function (data1) {
+        data1 = JSON.parse(JSON.stringify(data1))
+        
+        console.log(data1)
+
+
+        const profile1 = data1[6]["ProfilePic"]
+        
+        document.getElementById("Profile_Profile_Pic").src = profile1
+
+       
+        
+        
+      }
+    })
+  });
+
  
 
 

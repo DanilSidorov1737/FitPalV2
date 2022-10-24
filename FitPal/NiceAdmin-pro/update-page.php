@@ -1,3 +1,13 @@
+<?php 
+
+
+session_start();
+require "data/session.php";
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -276,12 +286,13 @@
               data-bs-toggle="dropdown"
             >
               <img
-                src="assets/img/profile-img.jpg"
-                alt="Profile"
+                src=""
+                
+                id='Profile_Profile_Pic'
                 class="rounded-circle"
               />
               <span class="d-none d-md-block dropdown-toggle ps-2"
-                >K. Anderson</span
+                ><?php echo $_SESSION["user"]; ?></span
               > </a
             ><!-- End Profile Iamge Icon -->
 
@@ -289,7 +300,7 @@
               class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
             >
               <li class="dropdown-header">
-                <h6>Kevin Anderson</h6>
+                <h6><?php echo $_SESSION["user"]; ?></h6>
                 <span>Web Designer</span>
               </li>
               <li>
@@ -381,7 +392,7 @@
         </li><!-- End Feed Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="update-page.html">
+          <a class="nav-link " href="update-page.php">
             <i class="bi bi-person"></i>
             <span>Update your Page</span>
           </a>

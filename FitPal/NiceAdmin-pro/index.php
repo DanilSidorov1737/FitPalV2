@@ -274,7 +274,7 @@ require "data/session.php";
       </li><!-- End Feed Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="update-page.html">
+        <a class="nav-link collapsed" href="update-page.php">
           <i class="bi bi-person"></i>
           <span>Update your Page</span>
         </a>
