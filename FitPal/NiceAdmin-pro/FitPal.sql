@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 23, 2022 at 12:35 AM
+-- Generation Time: Oct 30, 2022 at 11:22 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -44,7 +44,7 @@ CREATE TABLE `About` (
 --
 
 INSERT INTO `About` (`ID`, `User_ID_About_FK`, `About`, `Job`, `Twitter`, `Facebook`, `Instagram`, `Linked`, `ProfilePic`) VALUES
-(1, 2, 'Hello, my name is Nottles, I like coding, going to the gym, and MAXIMIZING MY HUMAN POTENTIONAL', 'Software Engineer', 'https://twitter.com/pewdiepie', 'https://www.facebook.com/PewDiePie/', 'https://www.instagram.com/pewdiepie/', 'https://www.linkedin.com/login', 'Profiles/Nottles.jpeg'),
+(1, 2, 'Hello, my name is Nottles, I like coding, going to the gym, and MAXIMIZING MY HUMAN POTENTIONAL', 'Software Engineer', 'https://twitter.com/pewdiepie', 'https://www.facebook.com/PewDiePie/', 'https://www.instagram.com/pewdiepie/', 'https://www.linkedin.com/login', 'Profiles/Nottles2.jpg'),
 (2, 5, 'Hello my name is chattent', 'doctor', 'twitter', 'facebook', 'insta', 'linked', 'Profiles/Chattent.jpeg');
 
 -- --------------------------------------------------------
@@ -66,8 +66,29 @@ CREATE TABLE `Adds` (
 --
 
 INSERT INTO `Adds` (`Add_ID`, `Ad_Title`, `Producer`, `Ad_Pic`, `Ad_Text`) VALUES
-(1, 'Workout Science', 'Brought To you By Google', 'Nottles.jpeg', 'Hello, this is the add number 1'),
-(2, 'Nutrition', 'Brought to you By BodyBuilding', 'Chattent.jpeg', 'Hello this is the add number 2');
+(1, 'Invite your Friends', 'Brought To you By FitPal', 'Nottles.jpeg', 'Hello, please help this up and coming social media by inviting your friends to join!');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Contact`
+--
+
+CREATE TABLE `Contact` (
+  `ID` int(11) NOT NULL,
+  `Username` varchar(200) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `Subject` varchar(200) NOT NULL,
+  `Message` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Contact`
+--
+
+INSERT INTO `Contact` (`ID`, `Username`, `Email`, `Subject`, `Message`) VALUES
+(1, 'Nottles', 'JohnSJones@jourrapide.com\r\n', 'I can\'t Post anything', 'Anytime I try to post, its not working'),
+(2, 'Nottles', 'dannyboy17237@gmail.com', 'Hello, my posts are not deleting', 'Hello this is not working');
 
 -- --------------------------------------------------------
 
@@ -143,7 +164,8 @@ INSERT INTO `Posts` (`Post_ID`, `Post_Title`, `Post_Text`, `Post_Pic`, `Poster`)
 (4, 'Second Post!', 'Hello This is my second Post, my name is Nottles', 'Nottles.jpeg', 'Nottles'),
 (22, 'Second Post', '123123', 'IMG_9538.jpg', 'Nottles'),
 (24, 'Hello this is my third post', 'hello', '1:x.png', 'Nottles'),
-(25, 'firfth post', 'hello 123', 'x^3.png', 'Nottles');
+(25, 'firfth post', 'hello 123', 'x^3.png', 'Nottles'),
+(27, 'Hello, This is my fifth post!', 'Hello Followers', 'x^2.png', 'Nottles');
 
 -- --------------------------------------------------------
 
@@ -185,7 +207,7 @@ CREATE TABLE `RealFriends` (
 --
 
 INSERT INTO `RealFriends` (`Friends_ID`, `Receive_User_ID`, `Sender_User_ID`, `Accept`) VALUES
-(1, 2, 5, 0),
+(1, 2, 5, 1),
 (2, 2, 8, 0),
 (3, 5, 34, 0),
 (4, 5, 543, 1),
@@ -214,7 +236,7 @@ CREATE TABLE `Users_1` (
 --
 
 INSERT INTO `Users_1` (`User_ID`, `Username`, `Gender`, `StreetAddress`, `EmailAddress`, `Birthday`, `Pass`) VALUES
-(2, 'Nottles', 'male', '4378 Southern Street', 'JohnSJones@jourrapide.com', '1951-08-06', 2),
+(2, 'Nottles', 'male', '4378 Southern Street', 'JohnSJones@jourrapide.com', '1951-08-06', 1234),
 (3, 'Tholuthe', 'male', '659 Smith Street', 'HowardHMullins@teleworm.us', '1989-07-03', 3),
 (4, 'Donglailly', 'female', '3887 Westwood Avenue', 'MargueriteRHamlin@einrot.com', '1959-06-21', 4),
 (5, 'Chattent', 'male', '3837 Jadewood Farms', 'WmRKearns@cuvox.de', '1981-08-16', 5),
@@ -3340,6 +3362,12 @@ ALTER TABLE `Adds`
   ADD PRIMARY KEY (`Add_ID`);
 
 --
+-- Indexes for table `Contact`
+--
+ALTER TABLE `Contact`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `friends`
 --
 ALTER TABLE `friends`
@@ -3410,10 +3438,16 @@ ALTER TABLE `Adds`
   MODIFY `Add_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `Contact`
+--
+ALTER TABLE `Contact`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `Posts`
 --
 ALTER TABLE `Posts`
-  MODIFY `Post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `Post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `PR`
